@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.Core", "Yagi.Core.csproj", "{72BCA3D5-4FC6-4E31-BFEE-250055DDAE5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.Core", "Yagi.Core\Yagi.Core.csproj", "{72BCA3D5-4FC6-4E31-BFEE-250055DDAE5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.Tests", "..\Yagi.Tests\Yagi.Tests.csproj", "{A67EA231-7568-42FE-8BD2-140656EEBF4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.Tests", "Yagi.Tests\Yagi.Tests.csproj", "{A67EA231-7568-42FE-8BD2-140656EEBF4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
