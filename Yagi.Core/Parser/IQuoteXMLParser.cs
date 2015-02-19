@@ -6,6 +6,6 @@ namespace Yagi.Core.Parser
 
     public interface IQuoteXmlParser
     {
-        IEnumerable<Quote> Load(string filePath);
+        IEnumerable<Quote> Load();
     }
 }

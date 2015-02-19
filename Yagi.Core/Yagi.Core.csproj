@@ -48,9 +48,7 @@
     <Compile Include="Service\IQuoteService.cs" />
     <Compile Include="Service\QuoteService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="quotes.xml" />
   </ItemGroup>

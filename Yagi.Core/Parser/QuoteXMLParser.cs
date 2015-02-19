@@ -9,7 +9,14 @@ namespace Yagi.Core.Parser
 
     public class QuoteXmlParser : IQuoteXmlParser
     {
-        public IEnumerable<Quote> Load(string filePath)
+        private readonly string filePath;
+
+        public QuoteXmlParser(string filePath)
+        {
+            this.filePath = filePath;
+        }
+
+        public IEnumerable<Quote> Load()
         {
             if (File.Exists(filePath))
             {

@@ -17,36 +17,36 @@
         [Test]
         public void Load_GivenAnInvalidPath_ShouldThrowMissingQuotesException()
         {
-            var sut = new QuoteXmlParser();
             var invalidPath = String.Empty;
+            var sut = new QuoteXmlParser(invalidPath);
 
-            Assert.Throws<MissingQuotesFileException>(delegate() { sut.Load(invalidPath); });
+            Assert.Throws<MissingQuotesFileException>(delegate() { sut.Load(); });
         }
 
         [Test]
         public void Load_GivenAValidPath_ShouldNotThrowException()
         {
-            var sut = new QuoteXmlParser();
             var fileName = "quotes.xml";
             var filePath = String.Format(
                 @"{0}\{1}",
                 Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
                 fileName);
+            var sut = new QuoteXmlParser(filePath);
 
-            Assert.DoesNotThrow(delegate() { sut.Load(filePath); });
+            Assert.DoesNotThrow(delegate() { sut.Load(); });
         }
 
         [Test]
         public void Load_GivenAValidPath_ShouldReturnAnyQuotes()
         {
-            var sut = new QuoteXmlParser();
             var fileName = "quotes.xml";
             var filePath = String.Format(
                 @"{0}\{1}",
                 Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
                 fileName);
+            var sut = new QuoteXmlParser(filePath);
 
-            IEnumerable<Quote> result = sut.Load(filePath);
+            IEnumerable<Quote> result = sut.Load();
 
             Assert.True(result.Any());
         }
@@ -54,14 +54,14 @@
         [Test]
         public void Load_GivenACollectionOfQuotes_ShouldReturnACompleteQuote()
         {
-            var sut = new QuoteXmlParser();
             var fileName = "quotes.xml";
             var filePath = String.Format(
                 @"{0}\{1}",
                 Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
                 fileName);
+            var sut = new QuoteXmlParser(filePath);
 
-            IEnumerable<Quote> result = sut.Load(filePath);
+            IEnumerable<Quote> result = sut.Load();
 
             Assert.That(result.First().Author, Is.EqualTo("benjaminRRR"));
         }
