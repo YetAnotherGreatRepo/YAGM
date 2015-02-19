@@ -39,11 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exception\MissingQuotesFileException.cs" />
     <Compile Include="Model\Quote.cs" />
+    <Compile Include="Model\QuoteCollection.cs" />
+    <Compile Include="Parser\IQuoteXMLParser.cs" />
+    <Compile Include="Parser\QuoteXMLParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IQuoteService.cs" />
     <Compile Include="Service\QuoteService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="quotes.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
