@@ -4,7 +4,7 @@
 
     using Yagi.Core.Model;
 
-    public class QuoteService
+    public class QuoteService : IQuoteService
     {
         private readonly Random random = new Random();
 

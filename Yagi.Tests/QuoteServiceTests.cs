@@ -6,7 +6,7 @@
     using Yagi.Core.Service;
 
     [TestFixture]
-    public class QuoteProviderTests
+    public class QuoteServiceTests
     {
         [Test]
         public void GetNext_AfterTheLastQuote_ShouldReturnADifferentQuote()
