@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.Core", "Yagi.Core\Yagi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.Tests", "Yagi.Tests\Yagi.Tests.csproj", "{A67EA231-7568-42FE-8BD2-140656EEBF4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yagi.UI", "Yagi.UI\Yagi.UI.csproj", "{4862C9A3-05EE-4F89-B99B-D31CF95F3887}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A67EA231-7568-42FE-8BD2-140656EEBF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A67EA231-7568-42FE-8BD2-140656EEBF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A67EA231-7568-42FE-8BD2-140656EEBF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4862C9A3-05EE-4F89-B99B-D31CF95F3887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4862C9A3-05EE-4F89-B99B-D31CF95F3887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4862C9A3-05EE-4F89-B99B-D31CF95F3887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4862C9A3-05EE-4F89-B99B-D31CF95F3887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
