@@ -9,8 +9,10 @@
         <av:NotifyIcon Name="notifyIcon" Icon="/Yagi.UI;component/Properties/yagm.ico" IconVisibility="Visible">
             <FrameworkElement.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Next Quote" Click="NextQuote_OnClick"/>
-                    <MenuItem Header="Exit" Click="Exit_OnClick" />
+                    <MenuItem Header="Next Quote" 
+                              Click="NextQuote_OnClick"/>
+                    <MenuItem Header="Exit" 
+                              Click="Exit_OnClick" />
                     <Separator />
                     <MenuItem Header="About YAGM" />
                 </ContextMenu>

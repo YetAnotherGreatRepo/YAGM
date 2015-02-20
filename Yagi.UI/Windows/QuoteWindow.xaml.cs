@@ -34,7 +34,7 @@
         private void QuoteWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
             Timer = new DispatcherTimer();
-            Timer.Interval = TimeSpan.FromSeconds(12d);
+            Timer.Interval = TimeSpan.FromSeconds(20d);
             Timer.Tick += TimerTick;
             Timer.Start();
         }

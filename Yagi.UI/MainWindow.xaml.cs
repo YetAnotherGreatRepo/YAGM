@@ -26,7 +26,7 @@
             var filePath = ConfigurationManager.AppSettings["QuoteData"];
             quoteService = new QuoteService(new QuoteXmlParser(filePath));
 
-            timer = new Timer(20000);
+            timer = new Timer(1);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
 
@@ -35,6 +35,8 @@
 
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
+            
+
             if (quote == null)
             {
                 quote = new Quote();
@@ -53,6 +55,10 @@
                     d.BeginInvoke((Action)OnChangedInMainThread);
                 }
             }
+
+            timer.Interval = 1000 * 25;
+            timer.Stop();
+            timer.Start();
         }
 
         private void OnChangedInMainThread()
