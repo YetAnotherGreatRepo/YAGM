@@ -34,3 +34,9 @@ This thing is really an exercise. Start something and - more importantly - finis
 
 ### Link to the awesome Hacker News comments
 [https://news.ycombinator.com/item?id=9070488](https://news.ycombinator.com/item?id=9070488)
+
+## Updates
+
+First screenshot. Actually looks like the mockup eh?
+
+![](http://i.imgur.com/ellWBva.jpg)
