@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.IO;
     using System.Linq;
 
@@ -26,11 +27,7 @@
         [Test]
         public void Load_GivenAValidPath_ShouldNotThrowException()
         {
-            var fileName = "quotes.xml";
-            var filePath = String.Format(
-                @"{0}\{1}",
-                Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
-                fileName);
+            var filePath = ConfigurationManager.AppSettings["QuoteData"];
             var sut = new QuoteXmlParser(filePath);
 
             Assert.DoesNotThrow(delegate() { sut.Load(); });
@@ -39,11 +36,7 @@
         [Test]
         public void Load_GivenAValidPath_ShouldReturnAnyQuotes()
         {
-            var fileName = "quotes.xml";
-            var filePath = String.Format(
-                @"{0}\{1}",
-                Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
-                fileName);
+            var filePath = ConfigurationManager.AppSettings["QuoteData"];
             var sut = new QuoteXmlParser(filePath);
 
             IEnumerable<Quote> result = sut.Load();
@@ -54,11 +47,7 @@
         [Test]
         public void Load_GivenACollectionOfQuotes_ShouldReturnACompleteQuote()
         {
-            var fileName = "quotes.xml";
-            var filePath = String.Format(
-                @"{0}\{1}",
-                Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
-                fileName);
+            var filePath = ConfigurationManager.AppSettings["QuoteData"];
             var sut = new QuoteXmlParser(filePath);
 
             IEnumerable<Quote> result = sut.Load();

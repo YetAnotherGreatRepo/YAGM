@@ -3,6 +3,7 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.IO;
     using System.Linq;
 
@@ -18,12 +19,8 @@
         [Test]
         public void GetNext_AfterTheLastQuote_ShouldReturnADifferentQuote()
         {
-            var fileName = "quotes.xml";
-            var filePath = String.Format(
-                @"{0}\{1}",
-                Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
-                fileName);
-            var sut = new QuoteService(new QuoteXmlParser(filePath));
+            var filePath =  ConfigurationManager.AppSettings["QuoteData"];
+           var sut = new QuoteService(new QuoteXmlParser(filePath));
 
             Quote quote1 = sut.GetNext(new Quote());
             Quote quote2 = sut.GetNext(quote1);
@@ -35,11 +32,7 @@
         [Test]
         public void GetAll_ShouldReturnCollectionOfQuotes()
         {
-            var fileName = "quotes.xml";
-            var filePath = String.Format(
-                @"{0}\{1}",
-                Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())),
-                fileName);
+            var filePath = ConfigurationManager.AppSettings["QuoteData"];
             var sut = new QuoteService(new QuoteXmlParser(filePath));
 
             IEnumerable<Quote> quotes = sut.GetAll();

@@ -28,7 +28,7 @@
             {
                 while (true)
                 {
-                    var rndIndex = random.Next(0, quotes.Count() - 1);
+                    var rndIndex = random.Next(0, quotes.Count());
                     var newQuote = quotes[rndIndex];
 
                     if (newQuote != null && newQuote.Text != lastQuote.Text)

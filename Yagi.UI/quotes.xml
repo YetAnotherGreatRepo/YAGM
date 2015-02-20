@@ -3,15 +3,84 @@
   <Quotes>
     <Quote>
       <Text>Get to the problem. Don't solve for problems you don't yet have.</Text>
-      <Author>benjaminRRR</Author>
+      <Author>-- benjaminRRR</Author>
     </Quote>
     <Quote>
       <Text>Perfectionism and procrastination can be tightly-coupled. I thought I was lazy, but I'm not. Perfectionism is simultaneously one of my greatest strengths and weaknesses.</Text>
-      <Author>ISL</Author>
+      <Author>-- ISL</Author>
     </Quote>
     <Quote>
       <Text>This sounds like the tech equivalent of FOMO, "fear of missing out"</Text>
-      <Author>smacktoward</Author>
+      <Author>-- smacktoward</Author>
+    </Quote>
+    <Quote>
+      <Text>Stop caring. Make something messy and shitty. Tell yourself you are going to make something messy and shitty; gleefully ignore any "best practices" that make it a pain in the ass to just slap something together.</Text>
+      <Author>-- egypturnash</Author>
+    </Quote>
+  <Quote>
+      <Text>Something you can start doing right now: exercise and take non-computer breaks. Even 30 minutes of walking around will sharpen your focus. 20 minutes on an elliptical will be even better. There's ample clinical evidence on how exercise is really helpful with focus and mood.</Text>
+      <Author>-- paul_milovanov</Author>
+    </Quote>
+  <Quote>
+      <Text>Do it in the language you already master. It's going to invariably be the wrong choice, which will become apparent at some point in the future, but in the early stages of a project speed is the most important thing.</Text>
+      <Author>-- nattaggart</Author>
+    </Quote>
+  <Quote>
+      <Text>As others have said, ultimately what you are doing is very productive-looking procrastinating. The only way to start developing is to, well, start developing.</Text>
+      <Author>-- Thespian</Author>
+    </Quote>
+  <Quote>
+      <Text>Focusing on small tasks to break out of that mold was the only way I could circumvent the cyclical loop that I can only describe as an ungodly marriage of procrastination and "Squirrel!".</Text>
+      <Author>-- windexh8er</Author>
+    </Quote>
+   <Quote>
+      <Text>You are a right brainer. In test taking, the left brainer prefers the black-and-white choices presented in multiple choice questions while the right brainer may prefer essay questions where the whole picture can be given.</Text>
+      <Author>-- ben_pr</Author>
+    </Quote>
+  <Quote>
+      <Text>The trick is to get good at the boring work and hammer it out in a consistent, quick, and maintainable rhythm. And pushing yourself to achieve that pacing and to not make mistakes makes things more difficult, and thus more engaging.</Text>
+      <Author>-- logn</Author>
+    </Quote>
+   <Quote>
+      <Text>The only important thing in this category is sales: talking to actual customers, selling, closing sales, and making them happy. Granted the other stuff is fun and involves surfing the web and playing around with new gadgets, and it's work that must be done, but its enjoyability is far disproportionate to its importance.</Text>
+      <Author>-- logn</Author>
+    </Quote>
+   <Quote>
+      <Text>Kent Beck of TDD fame wrote an early answer to this blog post: "Just ship, baby."</Text>
+      <Author>-- skrebbel</Author>
+    </Quote>
+  <Quote>
+      <Text>It's not ADD, it is anxiety. Try something else. At the very least, get an hour of walking done a day.</Text>
+      <Author>-- joshu</Author>
+    </Quote>
+  <Quote>
+      <Text>You can't do every aspect of everything well, I would say it is even foolish to try. This is what focusing is all about, paying attention to what's important and disregarding the rest. Don't dick around with editor configs.</Text>
+      <Author>-- serve_yay</Author>
+    </Quote>
+  <Quote>
+      <Text>Find someone to code with you. Being alone is half your problem, and even explaining it to someone requires more focus than you have.</Text>
+      <Author>-- mrpoptart</Author>
+    </Quote>
+  <Quote>
+      <Text>“People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I'm actually as proud of the things we haven't done as the things I have done. Innovation is saying no to 1,000 things.” -Steve Jobs</Text>
+      <Author>-- damosneeze</Author>
+    </Quote>
+  <Quote>
+      <Text>Perfect is the enemy of good.</Text>
+      <Author>-- almost_usual</Author>
+    </Quote>
+   <Quote>
+      <Text>Just run wild and do what you feel like needs to be done, not what everybody else is doing. Industry standard best practices aren't best when they keep you from practicing and improving your own weaknesses.</Text>
+      <Author>-- DonHopkins</Author>
+    </Quote>
+  <Quote>
+      <Text>Simply put: You're shopping, not creating. If you're doing anything worthwhile, you'll soon land in a zone where tools and tutorials don't really help you anymore. There's just the project you have, and your will to work on it.</Text>
+      <Author>-- chipsy</Author>
+    </Quote>
+  <Quote>
+      <Text>Fill your bowl to the brim and it will spill. Keep sharpening your knife and it will blunt. Chase after money and security and your heart will never unclench. Care about people's approval and you will be their prisoner.
+Do your work, then step back. The only path to serenity.</Text>
+      <Author>-- The Hacker News Community</Author>
     </Quote>
   </Quotes>
 </QuoteCollection>
