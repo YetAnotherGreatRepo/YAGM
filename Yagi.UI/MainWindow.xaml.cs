@@ -23,10 +23,10 @@
 
         public MainWindow()
         {
-            var filePath = ConfigurationManager.AppSettings["QuoteData"];
-            quoteService = new QuoteService(new QuoteXmlParser(filePath));
+            this.quoteService = App.GetInstance<IQuoteService>();
 
-            timer = new Timer(1);
+            ProcessQuote();
+            timer = new Timer(TimeSpan.FromHours(1).TotalMilliseconds);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
 
@@ -35,62 +35,52 @@
 
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
-            
+            ProcessQuote();
+        }
 
-            if (quote == null)
-            {
-                quote = new Quote();
-            }
-            quote = quoteService.GetNext(quote);
+        private void ProcessQuote()
+        {
+            quote = quoteService.GetNext(quote ?? new Quote());
 
             if (quote != null)
             {
                 var d = Application.Current.Dispatcher;
+
                 if (d.CheckAccess())
                 {
-                    OnChangedInMainThread();
+                    DisplayNextQuote();
                 }
                 else
                 {
-                    d.BeginInvoke((Action)OnChangedInMainThread);
+                    d.BeginInvoke((Action)DisplayNextQuote);
                 }
             }
-
-            timer.Interval = 1000 * 25;
-            timer.Stop();
-            timer.Start();
         }
 
-        private void OnChangedInMainThread()
+        private void DisplayNextQuote()
         {
-            var viewModel = new QuoteWindowViewModel { Author = quote.Author, Text = quote.Text };
-            quoteWindow = new QuoteWindow();
+            if (quoteWindow != null)
+            {
 
-            quoteWindow.DataContext = viewModel;
+                quoteWindow.Close();
+            }
+
+            quote = quoteService.GetNext(quote ?? new Quote());
+
+            quoteWindow = new QuoteWindow();
+            
+            var viewModel = (QuoteWindowViewModel)quoteWindow.DataContext;
+            viewModel.Text = quote.Text;
+            viewModel.Author = quote.Author;
+
             quoteWindow.Show();
         }
 
         private void NextQuote_OnClick(object sender, RoutedEventArgs e)
         {
-            quote = quoteService.GetNext(quote ?? new Quote());
-
-            if (quoteWindow != null)
-            {
-                var viewModel = (QuoteWindowViewModel)quoteWindow.DataContext;
-
-                quoteWindow.Timer.Stop();
-                timer.Stop();
-                quoteWindow.Timer.Start();
-                timer.Start();
-
-                viewModel.Text = quote.Text;
-                viewModel.Author = quote.Author;
-            }
-            else
-            {
-                OnChangedInMainThread();
-            }
+            DisplayNextQuote();
         }
+
 
         private void Exit_OnClick(object sender, RoutedEventArgs e)
         {
