@@ -15,9 +15,9 @@
     {
         private Quote quote;
 
-        private readonly IQuoteService quoteService;
-
         private QuoteWindow quoteWindow;
+
+        private readonly IQuoteService quoteService;
 
         private readonly Timer timer;
 
@@ -57,20 +57,20 @@
 
         private void OnChangedInMainThread()
         {
-            var viewModel = new QuoteWindowViewModel() { Author = quote.Author, Text = quote.Text };
+            var viewModel = new QuoteWindowViewModel { Author = quote.Author, Text = quote.Text };
             quoteWindow = new QuoteWindow();
 
             quoteWindow.DataContext = viewModel;
             quoteWindow.Show();
         }
 
-        private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+        private void NextQuote_OnClick(object sender, RoutedEventArgs e)
         {
+            quote = quoteService.GetNext(quote ?? new Quote());
+
             if (quoteWindow != null)
             {
                 var viewModel = (QuoteWindowViewModel)quoteWindow.DataContext;
-
-                quote = quoteService.GetNext(quote ?? new Quote());
 
                 quoteWindow.Timer.Stop();
                 timer.Stop();
@@ -80,6 +80,20 @@
                 viewModel.Text = quote.Text;
                 viewModel.Author = quote.Author;
             }
-           }
+            else
+            {
+                OnChangedInMainThread();
+            }
+        }
+
+        private void Exit_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (quoteWindow != null)
+            {
+                quoteWindow.Close();
+            }
+
+            this.Close();
+        }
     }
 }

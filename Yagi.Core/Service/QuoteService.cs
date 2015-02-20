@@ -10,31 +10,52 @@
 
     public class QuoteService : IQuoteService
     {
-        private IQuoteXmlParser quoteXmlParser;
+        private static List<Quote> availableQuotes;
 
-        private Random random;
+        private static List<Quote> usedQuotes;
+
+        private readonly IQuoteXmlParser quoteXmlParser;
+
+        private readonly Random random;
 
         public QuoteService(IQuoteXmlParser quoteXmlParser)
         {
             this.quoteXmlParser = quoteXmlParser;
-            this.random = new Random();
+            usedQuotes = new List<Quote>();
+            random = new Random();
         }
 
         public Quote GetNext(Quote lastQuote)
         {
-            var quotes = GetAll().ToList();
-
-            if (quotes.Any())
+            if (availableQuotes == null)
             {
-                while (true)
-                {
-                    var rndIndex = random.Next(0, quotes.Count());
-                    var newQuote = quotes[rndIndex];
+                availableQuotes = GetAll().ToList();
+            }
 
-                    if (newQuote != null && newQuote.Text != lastQuote.Text)
-                    {
-                        return newQuote;
-                    }
+            while (true)
+            {
+                // Check if we're using the last quote we haven't used before
+                // After this quote, we are starting over with a new empty usedQuotes list
+                var quotes = availableQuotes.Except(usedQuotes).ToList();
+
+                if (quotes.Count() == 1)
+                {
+                    var output = quotes.FirstOrDefault();
+                    usedQuotes.Clear();
+                    usedQuotes.Add(output);
+                    return output;
+                }
+
+                // We have more than 1 remaining quote, so proceed with normal behaviour
+                var rndIndex = random.Next(0, quotes.Count());
+                var newQuote = quotes[rndIndex];
+
+                if (newQuote != null && 
+                    newQuote.Text != lastQuote.Text &&
+                    !usedQuotes.Contains(newQuote))
+                {
+                    usedQuotes.Add(newQuote);
+                    return newQuote;
                 }
             }
 
@@ -45,8 +66,12 @@
         {
             try
             {
-                var quotes = quoteXmlParser.Load();
-                return quotes;
+                if (availableQuotes != null)
+                {
+                    return availableQuotes;
+                }
+                availableQuotes = quoteXmlParser.Load().ToList();
+                return availableQuotes;
             }
             catch (Exception)
             {
